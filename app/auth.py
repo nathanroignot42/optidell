@@ -7,7 +7,7 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 
 from app.db import get_db
-from app.models import User  # ta table SQLAlchemy users
+from app.models.users import User
 
 # Config JWT
 SECRET_KEY = os.getenv("SECRET_KEY")
