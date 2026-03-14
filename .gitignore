@@ -1,0 +1,86 @@
+# =========================
+# PYTHON
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Distribution / packaging
+.Python
+build/
+dist/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# =========================
+# VIRTUAL ENVIRONMENTS
+# =========================
+venv/
+.env/
+.venv/
+env/
+ENV/
+
+# =========================
+# ENV VARIABLES
+# =========================
+.env
+.env.local
+.env.*.local
+
+# =========================
+# DATABASE
+# =========================
+*.db
+*.sqlite3
+
+# =========================
+# LOGS
+# =========================
+*.log
+logs/
+
+# =========================
+# CACHE
+# =========================
+.cache/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# =========================
+# IDE / EDITORS
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# TEST / TEMP FILES
+# =========================
+tmp/
+temp/
+*.tmp
+
+# =========================
+# RENDER / DEPLOYMENT
+# =========================
+.render/
