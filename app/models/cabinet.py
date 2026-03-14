@@ -1,6 +1,7 @@
 # app/models/cabinet.py
 from sqlalchemy import Column, Integer, String, Float, Text, DateTime
 from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
 from app.db import Base
 
 class Cabinet(Base):
@@ -10,3 +11,4 @@ class Cabinet(Base):
     adresse = Column(String(255), nullable=False)
     latitude = Column(Float)
     longitude = Column(Float)
+    patients = relationship("Patient", back_populates="cabinet")
