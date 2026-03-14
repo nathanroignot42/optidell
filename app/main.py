@@ -3,7 +3,7 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from app.db import Base, engine, get_db
 from app.routes import patients, visites, tournee, cabinets
-from app.auth_service import auth
+from app.auth import authenticate_user
 from sqlalchemy.orm import Session
 
 Base.metadata.create_all(bind=engine)
