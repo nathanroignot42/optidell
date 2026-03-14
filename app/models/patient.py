@@ -1,6 +1,7 @@
 # app/models/patient.py
 from sqlalchemy import Column, Integer, String, Float, Text, DateTime, ForeignKey
 from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
 from app.db import Base
 
 class Patient(Base):
