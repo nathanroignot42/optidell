@@ -2,8 +2,7 @@
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from app.db import Base, engine, get_db
-from app.routes import patients, visites, tournee, cabinets
-from app.auth import authenticate_user
+from app.routes import patients, visites, tournee, cabinets, auth
 from sqlalchemy.orm import Session
 
 Base.metadata.create_all(bind=engine)
@@ -18,7 +17,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(authenticate_user.router)
+app.include_router(auth.router)
 app.include_router(patients.router)
 app.include_router(visites.router)
 app.include_router(tournee.router)
