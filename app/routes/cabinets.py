@@ -39,4 +39,4 @@ def read_cabinets(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    return db.query(Cabinet).filter(Cabinet.user_id == current_user.id).offset(skip).limit(limit).all()
+    return db.query(Cabinet).filter(Cabinet.id == current_user.cabinet_id).offset(skip).limit(limit).all()

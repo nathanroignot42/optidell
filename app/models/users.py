@@ -17,4 +17,3 @@ class User(Base):
 
     # Relations (ex: tournées créées par cet utilisateur)
     tournees = relationship("Tournee", back_populates="infirmier")
-    cabinet_id = Column(Integer, ForeignKey("cabinets.id"), nullable=False)
