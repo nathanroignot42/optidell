@@ -1,5 +1,5 @@
 # app/models/patient.py
-from sqlalchemy import Column, Integer, String, Float, Text, DateTime
+from sqlalchemy import Column, Integer, String, Float, Text, DateTime, ForeignKey
 from sqlalchemy.sql import func
 from app.db import Base
 
@@ -16,4 +16,7 @@ class Patient(Base):
     longitude = Column(Float)
     telephone = Column(String(20))
     notes = Column(Text)
+    cabinet_id = Column(Integer, ForeignKey("cabinets.id"), nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+    
+    cabinet = relationship("Cabinet", back_populates="patients")

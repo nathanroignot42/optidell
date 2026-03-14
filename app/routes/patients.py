@@ -42,9 +42,11 @@ def create_patient(
     return db_patient
 
 @router.get("/", response_model=List[PatientOut])
-def read_patients(
-    skip: int = 0, limit: int = 100,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    return db.query(Patient).filter(Patient.user_id == current_user.id).offset(skip).limit(limit).all()
+def read_patients(skip: int = 0, limit: int = 100, 
+                  db: Session = Depends(get_db), 
+                  current_user: User = Depends(get_current_user)):
+    return db.query(Patient)\
+             .filter(Patient.cabinet_id == current_user.cabinet_id)\
+             .offset(skip)\
+             .limit(limit)\
+             .all()
